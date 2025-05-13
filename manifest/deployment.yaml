@@ -1,0 +1,8 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stewart-app
+  namespace: stewart-namespace
+spec:
+  replicas: 2
+  ...

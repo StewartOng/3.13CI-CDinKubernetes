@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stewart-app
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/StewartOng/3.13CI-CDinKubernetes.git"
+    targetRevision: main
+    path: ./manifest  # <path_to_manifest_directory>
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: stewart-ns
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
