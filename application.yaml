@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: "https://github.com/StewartOng/3.13CI-CDinKubernetes.git"
     targetRevision: main
-    path: ./manifest  # <path_to_manifest_directory>
+    path: .    # /manifest  <path_to_manifest_directory>
   destination:
     server: https://kubernetes.default.svc
     namespace: stewart-ns
